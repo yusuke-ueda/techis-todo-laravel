@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+// 引数として渡す{tweetId}はresources/views/@@.blade.phpでaタグのhref等でroute('',['tweetId'=>$tweet->id])のような形式で渡す。
+
 Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class)->name('tweet.index');
 // middleware('auth')->group(function(){})でログインユーザー以外アクセス不可になる
 Route::middleware('auth')->group(function(){
